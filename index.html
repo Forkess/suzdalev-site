@@ -18,6 +18,7 @@
         <div class="screen center-xs">
             <div class="col-sm-12 col-md-5 col-lg-3">
                 <div class="box-container">
+                <form v-on:submit.prevent="send">
                     <div class="row center-xs start-md middle-xs">
                         <div class="col-xs-3 col-sm-2 col-md-3">
                             <div class="grid__header">
@@ -121,7 +122,7 @@
                     <div class="row center-xs start-sm">
                         <div class="col-xs-12">
                             <div class="grid__row_item">
-                                <button class="button__send" @click="send">Отправить</button>
+                                <button type="submit" class="button__send">Отправить</button>
                                 <p class="text__description">Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных.</p>
                             </div>
                         </div>
@@ -144,6 +145,7 @@
                             </div>
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
             <div class="col-xs-12 col-md-offset-1 col-lg-offset-2 col-md-5 col-lg-6">
