@@ -4,7 +4,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 // set sender, recipient and subject
 $from = 'noreply@sender.ru';
-$to = 'dubaua@gmail.com';
+$to = 'Woodche@yandex.ru';
 $subject = "Заказ с сайта Суздалев.рф";
 $message = '';
 
