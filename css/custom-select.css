@@ -1,0 +1,55 @@
+.select {
+  position: relative;
+}
+
+.select__selected {
+  cursor: pointer;
+  position: relative;
+  background: white;
+  color: black;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select__arrow {
+  display: block;
+}
+
+.select__selected:hover {
+  text-decoration: underline;
+}
+
+.select__options {
+  background: white;
+  color: black;
+  box-shadow: 0 1px 3px 1px #1d1d1d;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.select__option {
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.select__option:hover {
+  background: rgb(34, 145, 149);
+  color: white;
+}
+
+.select__option_selected {
+  text-decoration: underline;
+}
+
+.select__overlay {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
