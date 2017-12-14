@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Woodche</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/flexboxgrid.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/custom-select.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="screen center-xs">
+            <div class="col-sm-12 col-md-5 col-lg-3">
+                <div class="box-container">
+                    <div class="row center-xs start-md middle-xs">
+                        <div class="col-xs-3 col-sm-2 col-md-3">
+                            <div class="grid__header">
+                                <img alt="Woodche" src="img/logo.png">
+                            </div>
+                        </div>
+                        <div class="col-xs-9 col-sm-6 col-md-9">
+                            <div class="grid__header">
+                                <h1>Woodche</h1>
+                                <h2>Кроватки-домики в Челябинске</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm">
+                        <div class="col-xs-12">
+                            <div class="grid__top">
+                                Сконфигурируйте кроватку для ребенка
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm">
+                        <div class="col-xs-4">
+                            <div class="grid__row_item">
+                                Длина, мм
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <div class="grid__row_item grid__row_slider">
+                                700
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="grid__row_item">
+                                <vue-slider v-model="dlina" :min="700" :max="2500" :interval="50" v-bind="slider_options"></vue-slider>
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <div class="grid__row_item">
+                                2500
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm">
+                        <div class="col-xs-4">
+                            <div class="grid__row_item">
+                                Ширина, мм
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <div class="grid__row_item grid__row_slider">
+                                700
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="grid__row_item">
+                                <vue-slider v-model="width" :min="700" :max="1500" :interval="50" v-bind="slider_options"></vue-slider>
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <div class="grid__row_item">
+                                1500
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm">
+                        <div class="col-xs-6">
+                            <div class="grid__row_item">
+                                <custom-select :block="stages"></custom-select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="grid__row_item">
+                                <custom-select :block="boxes"></custom-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm">
+                        <div class="col-xs-6">
+                            <div class="grid__row_item">
+                                <custom-select :block="colors"></custom-select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="grid__row_item">
+                                <custom-select :block="materials"></custom-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm">
+                        <div class="col-xs-6">
+                            <div class="grid__row_item">
+                                <input v-model="name" placeholder="Ваше имя">
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="grid__row_item">
+                                <input v-model="phone" placeholder="+7 (888) 888-88-88">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm">
+                        <div class="col-xs-12">
+                            <div class="grid__row_item">
+                                <button class="button__send" @click="send">Отправить</button>
+                                <p class="text__description">Нажимая на кнопку, вы даете согласие на обработку ваших персональных данных.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center-xs start-sm middle-xs">
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="grid__row_item">
+                                <p class="text__description">© Столярная мастерская Woodche, 2017 г.</p>
+                                <p class="text__description">г. Челябинск, тел. 8 (982) 327-82-00</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="grid__row_item">
+                                <a href="https://vk.com/woodche" target="_blank">
+                                    <img class="footer__pic" src="img/vk-logo-001.png">
+                                </a>
+                                <a href="https://www.instagram.com/woodche/" target="_blank">
+                                    <img class="footer__pic" src="img/insta-logo-001.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-offset-1 col-lg-offset-2 col-md-5 col-lg-6">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/pic-1.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/pic-2.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/pic-3.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/pic-4.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/pic-5.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/pic-6.jpg">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/pic-7.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vue.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/custom-select.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
